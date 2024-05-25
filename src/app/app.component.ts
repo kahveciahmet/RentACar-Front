@@ -9,12 +9,31 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
+import { FormsModule } from '@angular/forms';
+import { FilterPipePipe } from './pipes/filter-pipe.pipe';
+import { ToastrModule } from 'ngx-toastr';
+import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 
 @Component({
   selector: 'app-root',
   standalone: true,
-  imports: [RouterOutlet,CommonModule, CarComponent, BrandComponent, RentalComponent, NaviComponent, 
-    ColorComponent, CustomerComponent, RentalComponent,HttpClientModule,CarDetailComponent],
+  imports: [
+    RouterOutlet,
+    CommonModule, 
+    CarComponent, 
+    BrandComponent,
+    CartSummaryComponent, 
+    RentalComponent, 
+    NaviComponent, 
+    ColorComponent, 
+    CustomerComponent, 
+    RentalComponent,
+    HttpClientModule,
+    CarDetailComponent,
+    FormsModule,
+    FilterPipePipe, 
+    ToastrModule
+  ],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })

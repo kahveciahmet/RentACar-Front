@@ -5,6 +5,15 @@
     </div>
   </div>
 
+  <div class="mb-3">
+    <label for="filterText" class="form-label">İstediğin kiralık arabayı ara!</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Aradığın arabayı yaz...">
+  </div>
+  <div *ngIf="filterText" class="alert alert-success">
+    {{filterText}} aradınız.
+
+  </div>
+
   <div *ngIf="dataLoaded">
     <h2 class="mb-4">Araba Listesi</h2>
     <table class="table table-striped">
@@ -20,7 +29,7 @@
         </tr>
       </thead>
       <tbody>
-        <tr *ngFor="let car of cars" (click)="goToCarDetails(car.id)">
+        <tr *ngFor="let car of cars | filterPipe:filterText" (click)="goToCarDetails(car.id)">
           <th scope="row">{{ car.id }}</th>
           <td>{{ car.brandName }}</td>
           <td>{{ car.colorName }}</td>
@@ -28,6 +37,7 @@
           <td>{{ car.dailyPrice }}</td>
           <td>{{ car.transmissionType }}</td>
           <td>{{ car.description }}</td>
+          <td><button type="button" class="btn btn-outline-success">Araç Detayı</button></td>
         </tr>
       </tbody>
     </table>

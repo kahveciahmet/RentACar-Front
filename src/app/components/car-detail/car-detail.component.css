@@ -42,6 +42,11 @@
     width: 100%; /* Genişliği artırın */
     max-width: 1000px; /* Maksimum genişlik */
   }
+
+  .full-width-btn {
+    width: 100%;
+  }
+  
   
   .caption {
     margin: auto;

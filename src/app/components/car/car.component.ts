@@ -3,22 +3,27 @@ import { Component } from '@angular/core';
 import { Car } from '../../models/car';
 import { CarService } from '../../services/car.service';
 import { ActivatedRoute, Router } from '@angular/router';
+import { FormsModule } from '@angular/forms';
+import { FilterPipePipe } from '../../pipes/filter-pipe.pipe';
+import { ToastrModule} from 'ngx-toastr';
+import { CartService } from '../../services/cart.service';
 
 @Component({
   selector: 'app-car',
   standalone: true,
-  imports: [CommonModule],
+  imports: [CommonModule,FormsModule,FilterPipePipe,ToastrModule],
   templateUrl: './car.component.html',
   styleUrls: ['./car.component.css']
 })
 export class CarComponent {
   cars: Car[] = [];
   dataLoaded = false;
+  filterText:"";
 
   constructor(
     private carService: CarService,
     private activatedRoute: ActivatedRoute,
-    private router:Router
+    private router:Router,
   ) {}
 
   ngOnInit(): void {
@@ -60,6 +65,8 @@ export class CarComponent {
   goToCarDetails(carId: number) {
     this.router.navigate(['/cars', carId]);
   }
+
+  
 
   
 

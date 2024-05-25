@@ -3,12 +3,14 @@ import { Component, OnInit, inject } from "@angular/core";
 import { ActivatedRoute } from "@angular/router";
 import { Car } from "../../models/car";
 import { CarService } from "../../services/car.service";
+import { ToastrModule, ToastrService } from "ngx-toastr";
+import { CartService } from "../../services/cart.service";
 
 
 @Component({
   selector: 'app-car-detail',
   standalone:true,
-  imports:[CommonModule],
+  imports:[CommonModule,ToastrModule],
   templateUrl: './car-detail.component.html',
   styleUrls: ['./car-detail.component.css']
 })
@@ -20,6 +22,8 @@ export class CarDetailComponent implements OnInit {
 
   private carService = inject(CarService);
   private activatedRoute = inject(ActivatedRoute);
+  private toastrService = inject(ToastrService);
+  private cartService = inject(CartService);
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -55,5 +59,10 @@ export class CarDetailComponent implements OnInit {
   closeImage() {
     const modal = document.getElementById("imageModal")!;
     modal.style.display = "none";
+  }
+
+  rentCar(car:Car){
+    this.toastrService.success(car.description,"Başarıyla eklendi.");
+    this.cartService.addToCart(car);
   }
 }
