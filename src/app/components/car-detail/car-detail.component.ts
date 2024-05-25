@@ -1,8 +1,9 @@
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-import { CarService } from '../../services/car.service';
-import { Car } from '../../models/car';
-import { CommonModule } from '@angular/common';
+import { CommonModule } from "@angular/common";
+import { Component, OnInit, inject } from "@angular/core";
+import { ActivatedRoute } from "@angular/router";
+import { Car } from "../../models/car";
+import { CarService } from "../../services/car.service";
+
 
 @Component({
   selector: 'app-car-detail',
@@ -14,12 +15,11 @@ import { CommonModule } from '@angular/common';
 export class CarDetailComponent implements OnInit {
   car: Car | undefined;
   dataLoaded = false;
-  carImages : string[] = [];
+  carImages: string[] = [];
+  selectedImage: string = '';
 
-  constructor(
-    private carService: CarService,
-    private activatedRoute: ActivatedRoute
-  ) {}
+  private carService = inject(CarService);
+  private activatedRoute = inject(ActivatedRoute);
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -33,16 +33,27 @@ export class CarDetailComponent implements OnInit {
     this.carService.getCarDetails(carId).subscribe(response => {
       this.car = response.data[0];
       this.dataLoaded = true;
+      this.setCarImages();
     });
   }
 
   setCarImages() {
     if (this.car) {
-      // Resim dosyalarının adlandırma formatına göre resim yollarını ayarla
-      const imageCount = 3; // Her araç için kaç resim olduğunu belirtin
+      const imageCount = 3;
       for (let i = 1; i <= imageCount; i++) {
         this.carImages.push(`assets/images/cars/car-${this.car.id}-${i}.jpg`);
       }
     }
+  }
+
+  openImage(image: string) {
+    this.selectedImage = image;
+    const modal = document.getElementById("imageModal")!;
+    modal.style.display = "block";
+  }
+
+  closeImage() {
+    const modal = document.getElementById("imageModal")!;
+    modal.style.display = "none";
   }
 }

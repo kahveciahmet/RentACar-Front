@@ -7,23 +7,15 @@
   <div *ngIf="dataLoaded && car">
     <h2>{{ car.brandName }} {{ car.modelYear }} Detayları</h2>
   
-    <!-- Carousel Başlangıcı -->
-    <div id="carImageCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
-      <div class="carousel-inner">
-        <div *ngFor="let image of carImages; let i = index" [class]="i === 0 ? 'carousel-item active' : 'carousel-item'">
-          <img [src]="image" class="d-block w-100" alt="Araba Resmi">
+    <!-- Kaydırmalı Galeri Başlangıcı -->
+    <div class="image-gallery">
+      <div class="image-gallery-wrapper">
+        <div *ngFor="let image of carImages" class="image-gallery-item">
+          <img [src]="image" alt="Araba Resmi" (click)="openImage(image)">
         </div>
       </div>
-      <button class="carousel-control-prev" type="button" data-bs-target="#carImageCarousel" data-bs-slide="prev">
-        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Previous</span>
-      </button>
-      <button class="carousel-control-next" type="button" data-bs-target="#carImageCarousel" data-bs-slide="next">
-        <span class="carousel-control-next-icon" aria-hidden="true"></span>
-        <span class="visually-hidden">Next</span>
-      </button>
     </div>
-    <!-- Carousel Bitişi -->
+    <!-- Kaydırmalı Galeri Bitişi -->
   
     <table class="table table-striped">
       <tbody>
@@ -70,4 +62,12 @@
       </tbody>
     </table>
   </div>
+  
+  <!-- Modal Başlangıcı -->
+  <div id="imageModal" class="modal" (click)="closeImage()">
+    <span class="close" (click)="closeImage()">&times;</span>
+    <img class="modal-content" id="modalImage" [src]="selectedImage">
+    <div class="caption">{{ car?.description }}</div> <!-- Resim yolu yerine model bilgisini gösterin -->
+  </div>
+  <!-- Modal Bitişi -->
   

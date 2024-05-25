@@ -14,7 +14,7 @@ import { CarDetailComponent } from './components/car-detail/car-detail.component
   selector: 'app-root',
   standalone: true,
   imports: [RouterOutlet,CommonModule, CarComponent, BrandComponent, RentalComponent, NaviComponent, 
-    ColorComponent, CustomerComponent, RentalComponent,HttpClientModule,CarDetailComponent,],
+    ColorComponent, CustomerComponent, RentalComponent,HttpClientModule,CarDetailComponent],
   templateUrl: './app.component.html',
   styleUrl: './app.component.css'
 })
