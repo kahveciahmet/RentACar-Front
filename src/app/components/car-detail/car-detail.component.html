@@ -1,0 +1,73 @@
+<div *ngIf="!dataLoaded" class="d-flex justify-content-center">
+    <div class="spinner-border text-success" role="status">
+      <span class="visually-hidden">Loading...</span>
+    </div>
+  </div>
+  
+  <div *ngIf="dataLoaded && car">
+    <h2>{{ car.brandName }} {{ car.modelYear }} Detayları</h2>
+  
+    <!-- Carousel Başlangıcı -->
+    <div id="carImageCarousel" class="carousel slide mb-4" data-bs-ride="carousel">
+      <div class="carousel-inner">
+        <div *ngFor="let image of carImages; let i = index" [class]="i === 0 ? 'carousel-item active' : 'carousel-item'">
+          <img [src]="image" class="d-block w-100" alt="Araba Resmi">
+        </div>
+      </div>
+      <button class="carousel-control-prev" type="button" data-bs-target="#carImageCarousel" data-bs-slide="prev">
+        <span class="carousel-control-prev-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Previous</span>
+      </button>
+      <button class="carousel-control-next" type="button" data-bs-target="#carImageCarousel" data-bs-slide="next">
+        <span class="carousel-control-next-icon" aria-hidden="true"></span>
+        <span class="visually-hidden">Next</span>
+      </button>
+    </div>
+    <!-- Carousel Bitişi -->
+  
+    <table class="table table-striped">
+      <tbody>
+        <tr>
+          <th>Marka</th>
+          <td>{{ car.brandName }}</td>
+        </tr>
+        <tr>
+          <th>Renk</th>
+          <td>{{ car.colorName }}</td>
+        </tr>
+        <tr>
+          <th>Model Yılı</th>
+          <td>{{ car.modelYear }}</td>
+        </tr>
+        <tr>
+          <th>Günlük Fiyat</th>
+          <td>{{ car.dailyPrice }}</td>
+        </tr>
+        <tr>
+          <th>Açıklama</th>
+          <td>{{ car.description }}</td>
+        </tr>
+        <tr>
+          <th>Vites Tipi</th>
+          <td>{{ car.transmissionType }}</td>
+        </tr>
+        <tr>
+          <th>Günlük Km Limiti</th>
+          <td>{{ car.dailyKmLimit }}</td>
+        </tr>
+        <tr>
+          <th>Oturma Kapasitesi</th>
+          <td>{{ car.seatingCapacity }}</td>
+        </tr>
+        <tr>
+          <th>Minimum Ehliyet Yaşı</th>
+          <td>{{ car.licenseAge }}</td>
+        </tr>
+        <tr>
+          <th>Minimum Yaş Yaşı</th>
+          <td>{{ car.renterAge }}</td>
+        </tr>
+      </tbody>
+    </table>
+  </div>
+  

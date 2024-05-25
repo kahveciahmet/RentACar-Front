@@ -2,7 +2,7 @@ import { CommonModule } from '@angular/common';
 import { Component } from '@angular/core';
 import { Car } from '../../models/car';
 import { CarService } from '../../services/car.service';
-import { ActivatedRoute } from '@angular/router';
+import { ActivatedRoute, Router } from '@angular/router';
 
 @Component({
   selector: 'app-car',
@@ -17,7 +17,8 @@ export class CarComponent {
 
   constructor(
     private carService: CarService,
-    private activatedRoute: ActivatedRoute
+    private activatedRoute: ActivatedRoute,
+    private router:Router
   ) {}
 
   ngOnInit(): void {
@@ -39,7 +40,7 @@ export class CarComponent {
         this.cars = response.data;
         this.dataLoaded = true;
       })
-    };
+  };
   
 
   getCarsByBrand(brandId: number) {
@@ -47,12 +48,20 @@ export class CarComponent {
         this.cars = response.data;
         this.dataLoaded = true;
       })
-    };
+  };
   
   getCarsByColor(colorId: number) {
     this.carService.getCarsByColor(colorId).subscribe(response => {
         this.cars = response.data;
         this.dataLoaded = true;
       })
-    };
+  };
+
+  goToCarDetails(carId: number) {
+    this.router.navigate(['/cars', carId]);
+  }
+
+  
+
+    
 }

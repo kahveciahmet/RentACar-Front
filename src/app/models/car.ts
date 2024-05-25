@@ -8,4 +8,8 @@ export interface Car{
     dailyPrice:number;
     description:string;
     transmissionType:string;
+    dailyKmLimit:number;
+    seatingCapacity:number;
+    licenseAge:number;
+    renterAge:number;
 }
