@@ -1,4 +1,190 @@
-/* You can add global styles to this file, and also import other style files */
+/* styles.css */
 
-html, body { height: 100%; }
-body { margin: 0; font-family: Roboto, "Helvetica Neue", sans-serif; }
+html, body {
+    height: 100%;
+    margin: 0;
+}
+
+body {
+    font-family: 'Roboto', sans-serif;
+    background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/assets/images/arkaplan.jpg') no-repeat center center fixed;
+    background-size: cover;
+    background-blend-mode: overlay;
+    color: #333;
+    height: 100%;
+}
+
+.container-fluid {
+    background: rgba(255, 255, 255, 0.9);
+    padding: 0;
+    border-radius: 10px;
+}
+
+.row.no-gutters {
+    margin-right: 0;
+    margin-left: 0;
+}
+
+.sidebar {
+    background-color: #f8f9fa;
+    padding: 20px;
+    border-right: 1px solid #ddd;
+    height: calc(100vh - 56px);
+    position: sticky;
+    top: 56px;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+}
+
+.filter-section {
+    background-color: white;
+    border-radius: 10px;
+    padding: 15px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.list-group-item {
+    display: flex;
+    align-items: center;
+    padding: 15px 20px;
+    border: none;
+    border-bottom: 1px solid #ddd;
+    font-size: 1.1rem;
+}
+
+.list-group-item:last-child {
+    border-bottom: none;
+}
+
+.list-group-item-active {
+    background-color: #007bff;
+    color: white;
+    display: flex;
+    align-items: center;
+    font-size: 1.2rem;
+    padding: 20px 25px;
+}
+
+.brand-logo {
+    width: 30px;
+    height: auto;
+    margin-right: 10px;
+    vertical-align: middle;
+}
+
+.color-box {
+    display: inline-block;
+    width: 20px;
+    height: 20px;
+    margin-right: 10px;
+    border: 1px solid #ddd;
+    border-radius: 4px;
+    vertical-align: middle;
+    background-color: currentColor;
+}
+
+.content {
+    padding: 20px;
+}
+
+.search-bar {
+    margin-bottom: 20px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+}
+
+.search-bar .form-label {
+    font-size: 1.5rem;
+    font-weight: bold;
+    color: #007bff;
+    text-align: center;
+    margin-bottom: 10px;
+}
+
+.search-bar .form-control {
+    max-width: 600px;
+}
+
+.card {
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.2s;
+    background-color: rgba(255, 255, 255, 0.9);
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card-img-top {
+    max-height: 200px;
+    object-fit: cover;
+}
+
+.card-title {
+    font-size: 1.25rem;
+    font-weight: bold;
+    text-align: center;
+    margin-bottom: 1rem;
+    color: #333;
+}
+
+.card-body {
+    display: flex;
+    flex-direction: column;
+}
+
+.card-text {
+    font-size: 0.875rem;
+    line-height: 1.5;
+}
+
+.card .btn {
+    margin-top: auto;
+    background-color: #007bff;
+    border-color: #007bff;
+    color: #fff;
+}
+
+.card .btn:hover {
+    background-color: #0056b3;
+    border-color: #004085;
+}
+
+:host {
+    display: block;
+    width: 100%;
+}
+
+.navbar {
+    background-color: #333 !important;
+    color: white;
+    z-index: 1000;
+    position: fixed;
+    top: 0;
+    width: 100%;
+}
+
+.navbar-brand {
+    color: white !important;
+}
+
+.navbar-nav {
+    display: flex;
+    align-items: center;
+    flex-direction: row;
+}
+
+.nav-link {
+    color: white !important;
+    margin-right: 15px;
+}
+
+.nav-link:hover {
+    color: #adb5bd !important;
+}
+
+.form-control {
+    margin-left: 15px;
+}

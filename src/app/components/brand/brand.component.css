@@ -1,15 +1,49 @@
+/* app-brand.component.css */
+
+.sidebar {
+  background-color: #f8f9fa; /* Light background color */
+  padding: 20px;
+  border-right: 1px solid #ddd;
+  height: calc(100vh - 56px); /* 56px is the height of the navbar */
+  position: sticky;
+  top: 56px; /* Align with the navbar */
+  display: flex;
+  flex-direction: column;
+  justify-content: center; /* Ortalamak için */
+}
+
+.filter-section {
+  background-color: white;
+  border-radius: 10px;
+  padding: 15px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
 .list-group-item {
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  padding: 15px 20px; /* Padding arttırıldı */
+  border: none;
+  border-bottom: 1px solid #ddd; /* Add bottom border for separation */
+  font-size: 1.1rem; /* Yazı boyutu arttırıldı */
+}
+
+.list-group-item:last-child {
+  border-bottom: none; /* Remove bottom border for the last item */
 }
 
 .list-group-item-active {
   background-color: #007bff; 
   color: white;
-  padding: 10px;
+  display: flex;
+  align-items: center;
+  font-size: 1.2rem; /* Yazı boyutu biraz daha arttırıldı */
+  padding: 20px 25px; /* Daha büyük padding */
 }
 
-.brand-container {
-  display: block;
-  width: 100%;
-  margin-bottom: 10px;
+.brand-logo {
+  width: 30px;
+  height: auto;
+  margin-right: 10px;
+  vertical-align: middle;
 }

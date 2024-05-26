@@ -1,55 +1,120 @@
+/* General Styles */
+body {
+  font-family: 'Roboto', sans-serif;
+  color: #333;
+}
+
+.container {
+  background: rgba(255, 255, 255, 0.8);
+  padding: 20px;
+  border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+/* Payment Title */
+.payment-title {
+  text-align: center;
+  color: #007bff;
+  font-size: 2rem;
+  font-weight: bold;
+  margin-bottom: 20px;
+}
+
+/* Card Preview */
 .card-preview {
-    margin-bottom: 20px;
-    display: flex;
-    justify-content: center;
-  }
-  
-  .card {
-    width: 400px;
-    height: 250px;
-    border-radius: 15px;
-    padding: 20px;
-    background: linear-gradient(135deg, #00aaff, #0044cc);
-    color: white;
-    font-family: 'Courier New', Courier, monospace;
-    position: relative;
-    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
-  }
-  
-  .card-logo {
-    position: absolute;
-    top: 20px;
-    right: 20px;
-    font-size: 24px;
-    font-weight: bold;
-  }
-  
-  .card-number {
-    position: absolute;
-    top: 100px;
-    left: 20px;
-    font-size: 22px;
-  }
-  
-  .card-holder {
-    position: absolute;
-    bottom: 80px;
-    left: 20px;
-    font-size: 16px;
-    text-transform: uppercase;
-  }
-  
-  .card-expiry {
-    position: absolute;
-    bottom: 60px;
-    right: 20px;
-    font-size: 16px;
-  }
-  
-  .card-cvv {
-    position: absolute;
-    bottom: 20px;
-    right: 20px;
-    font-size: 16px;
-  }
-  
+  margin-bottom: 20px;
+  display: flex;
+  justify-content: center;
+}
+
+.card {
+  width: 400px;
+  height: 250px;
+  border-radius: 15px;
+  padding: 20px;
+  background: linear-gradient(135deg, #00aaff, #0044cc);
+  color: white;
+  font-family: 'Courier New', Courier, monospace;
+  position: relative;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+.card-logo {
+  position: absolute;
+  top: 20px;
+  right: 20px;
+  font-size: 24px;
+  font-weight: bold;
+}
+
+.card-number {
+  position: absolute;
+  top: 100px;
+  left: 20px;
+  font-size: 22px;
+}
+
+.card-holder {
+  position: absolute;
+  bottom: 80px;
+  left: 20px;
+  font-size: 16px;
+  text-transform: uppercase;
+}
+
+.card-expiry {
+  position: absolute;
+  bottom: 60px;
+  right: 20px;
+  font-size: 16px;
+}
+
+.card-cvv {
+  position: absolute;
+  bottom: 20px;
+  right: 20px;
+  font-size: 16px;
+}
+
+/* Form Styles */
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-control {
+  border-radius: 5px;
+  padding: 10px;
+  font-size: 1rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1);
+  border: 1px solid #ddd;
+  transition: border-color 0.2s;
+}
+
+.form-control:focus {
+  border-color: #007bff;
+  outline: none;
+}
+
+.btn {
+  display: block;
+  width: 100%;
+  padding: 10px;
+  font-size: 1.2rem;
+  font-weight: bold;
+  text-transform: uppercase;
+  border: none;
+  border-radius: 5px;
+  background: #007bff;
+  color: white;
+  cursor: pointer;
+  transition: background-color 0.2s;
+}
+
+.btn:disabled {
+  background: #cccccc;
+  cursor: not-allowed;
+}
+
+.btn:hover:not(:disabled) {
+  background: #0056b3;
+}

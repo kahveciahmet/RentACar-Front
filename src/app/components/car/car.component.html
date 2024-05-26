@@ -5,10 +5,11 @@
     </div>
   </div>
 
-  <div class="mb-3">
-    <label for="filterText" class="form-label">İstediğin kiralık arabayı ara!</label>
-    <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Aradığın arabayı yaz...">
+  <div class="mb-3 search-container">
+    <label for="filterText" class="form-label styled-label">İstediğin kiralık arabayı ara!</label>
+    <input type="text" [(ngModel)]="filterText" class="form-control search-input" id="filterText" placeholder="Aradığın arabayı yaz...">
   </div>
+  
 
   <div *ngIf="dataLoaded">
     <h2 class="mb-4">Araba Listesi</h2>

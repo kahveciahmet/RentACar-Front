@@ -1,12 +1,16 @@
 import { Component } from '@angular/core';
+import { Router } from '@angular/router';
 
 @Component({
   selector: 'app-payment-success',
-  template: `
-    <div class="container mt-5">
-      <h2>Ödeme Başarılı</h2>
-      <p>Kiralama işleminiz başarıyla tamamlandı. İyi yolculuklar dileriz!</p>
-    </div>
-  `
+  templateUrl: './payment-success.component.html',
+  styleUrls: ['./payment-success.component.css']
 })
-export class PaymentSuccessComponent { }
+export class PaymentSuccessComponent {
+
+  constructor(private router: Router) {}
+
+  navigateHome() {
+    this.router.navigate(['/']);
+  }
+}

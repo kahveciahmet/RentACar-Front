@@ -1,9 +1,11 @@
 <div class="container-fluid">
   <app-navi></app-navi>
-  <div class="row">
+  <div class="row no-gutters">
     <div class="col-md-3 sidebar">
-      <app-brand class="full-width"></app-brand>
-      <app-color class="full-width"></app-color>
+      <div class="filter-section">
+        <app-brand class="full-width"></app-brand>
+        <app-color class="full-width"></app-color>
+      </div>
     </div>
     <div class="col-md-9 content">
       <router-outlet></router-outlet>

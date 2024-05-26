@@ -43,5 +43,6 @@ import { MatNativeDateModule } from '@angular/material/core';
   styleUrl: './app.component.css'
 })
 export class AppComponent {
+  filterText:string="";
   title = 'Rent-A-Car';
 }

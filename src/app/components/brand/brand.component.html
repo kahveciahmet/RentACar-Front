@@ -1,10 +1,10 @@
 <ul class="list-group">
-    <li [class]="getAllBrandClass()" routerLink="/cars">Tüm Markalar</li>
-      <li (click)="setCurrentBrand(brand)"
+  <li [class]="getAllBrandClass()" routerLink="/cars">Tüm Markalar</li>
+  <li (click)="setCurrentBrand(brand)"
       routerLink="/cars/brand/{{brand.id}}" 
       *ngFor="let brand of brands"
-       [class]="getCurrentBrandClass(brand)">
-       {{brand.name}}</li>
-    </ul>
-  
-    <h5 *ngIf="currentBrand">{{currentBrand.name}} seçtiniz</h5>    
+      [class]="getCurrentBrandClass(brand)">
+    <img [src]="'assets/images/logos/' + brand.name + '.png'" alt="{{ brand.name }} logo" class="brand-logo">
+    {{brand.name}}
+  </li>
+</ul>

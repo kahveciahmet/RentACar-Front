@@ -1,44 +1,43 @@
 <div class="container mt-5">
-    <h2>Ödeme Bilgileri</h2>
-    <div class="card-preview">
-      <div class="card">
-        <div class="card-logo">VISA</div>
-        <div class="card-number">{{ formattedCardNumber }}</div>
-        <div class="card-holder">{{ cardHolderName || 'KART SAHİBİ' }}</div>
-        <div class="card-expiry">{{ formattedExpiryDate }}</div>
-        <div class="card-cvv">{{ formattedCVV }}</div>
+  <h2 class="payment-title">Ödeme Bilgileri</h2>
+  <div class="card-preview">
+    <div class="card">
+      <div class="card-logo">VISA</div>
+      <div class="card-number">{{ formattedCardNumber }}</div>
+      <div class="card-holder">{{ cardHolderName || 'KART SAHİBİ' }}</div>
+      <div class="card-expiry">{{ formattedExpiryDate }}</div>
+      <div class="card-cvv">{{ formattedCVV }}</div>
+    </div>
+  </div>
+  <form [formGroup]="paymentForm" (ngSubmit)="makePayment()" novalidate>
+    <div class="form-group">
+      <label for="cardHolderName">İsim</label>
+      <input type="text" class="form-control" id="cardHolderName" formControlName="cardHolderName" (input)="updateCardPreview()" required>
+      <div *ngIf="paymentForm.controls['cardHolderName'].invalid && paymentForm.controls['cardHolderName'].touched" class="invalid-feedback">
+        Lütfen adınızı girin.
       </div>
     </div>
-    <form [formGroup]="paymentForm" (ngSubmit)="makePayment()" novalidate>
-      <div class="form-group">
-        <label for="cardHolderName">İsim</label>
-        <input type="text" class="form-control" id="cardHolderName" formControlName="cardHolderName" (input)="updateCardPreview()" required>
-        <div *ngIf="paymentForm.controls['cardHolderName'].invalid && paymentForm.controls['cardHolderName'].touched" class="invalid-feedback">
-          Lütfen adınızı girin.
-        </div>
+    <div class="form-group">
+      <label for="cardNumber">Kart Numarası</label>
+      <input type="text" class="form-control" id="cardNumber" formControlName="cardNumber" maxlength="16" (input)="updateCardPreview()" required>
+      <div *ngIf="paymentForm.controls['cardNumber'].invalid && paymentForm.controls['cardNumber'].touched" class="invalid-feedback">
+        Lütfen geçerli bir kredi kartı numarası girin.
       </div>
-      <div class="form-group">
-        <label for="cardNumber">Kart Numarası</label>
-        <input type="text" class="form-control" id="cardNumber" formControlName="cardNumber" maxlength="16" (input)="updateCardPreview()" required>
-        <div *ngIf="paymentForm.controls['cardNumber'].invalid && paymentForm.controls['cardNumber'].touched" class="invalid-feedback">
-          Lütfen geçerli bir kredi kartı numarası girin.
-        </div>
+    </div>
+    <div class="form-group">
+      <label for="expiryDate">Son Kullanma Tarihi</label>
+      <input type="text" class="form-control" id="expiryDate" formControlName="expiryDate" placeholder="MM/YY" (input)="updateCardPreview()" required>
+      <div *ngIf="paymentForm.controls['expiryDate'].invalid && paymentForm.controls['expiryDate'].touched" class="invalid-feedback">
+        Lütfen geçerli bir tarih girin.
       </div>
-      <div class="form-group">
-        <label for="expiryDate">Son Kullanma Tarihi</label>
-        <input type="text" class="form-control" id="expiryDate" formControlName="expiryDate" placeholder="MM/YY" (input)="updateCardPreview()" required>
-        <div *ngIf="paymentForm.controls['expiryDate'].invalid && paymentForm.controls['expiryDate'].touched" class="invalid-feedback">
-          Lütfen geçerli bir tarih girin.
-        </div>
+    </div>
+    <div class="form-group">
+      <label for="cvv">CVV</label>
+      <input type="text" class="form-control" id="cvv" formControlName="cvv" maxlength="3" (input)="updateCardPreview()" required>
+      <div *ngIf="paymentForm.controls['cvv'].invalid && paymentForm.controls['cvv'].touched" class="invalid-feedback">
+        Lütfen geçerli bir CVV girin.
       </div>
-      <div class="form-group">
-        <label for="cvv">CVV</label>
-        <input type="text" class="form-control" id="cvv" formControlName="cvv" maxlength="3" (input)="updateCardPreview()" required>
-        <div *ngIf="paymentForm.controls['cvv'].invalid && paymentForm.controls['cvv'].touched" class="invalid-feedback">
-          Lütfen geçerli bir CVV girin.
-        </div>
-      </div>
-      <button type="submit" class="btn btn-primary" [disabled]="paymentForm.invalid">Ödeme Yap</button>
-    </form>
-  </div>
-  
+    </div>
+    <button type="submit" class="btn btn-primary" [disabled]="paymentForm.invalid">Ödeme Yap</button>
+  </form>
+</div>
