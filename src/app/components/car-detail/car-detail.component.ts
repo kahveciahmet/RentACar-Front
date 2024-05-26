@@ -1,16 +1,18 @@
 import { CommonModule } from "@angular/common";
 import { Component, OnInit, inject } from "@angular/core";
-import { ActivatedRoute } from "@angular/router";
+import { ActivatedRoute, Router } from "@angular/router";
 import { Car } from "../../models/car";
 import { CarService } from "../../services/car.service";
 import { ToastrModule, ToastrService } from "ngx-toastr";
 import { CartService } from "../../services/cart.service";
-
+import { FormsModule } from "@angular/forms";
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-car-detail',
-  standalone:true,
-  imports:[CommonModule,ToastrModule],
+  standalone: true,
+  imports: [CommonModule, ToastrModule, FormsModule, MatDatepickerModule, MatNativeDateModule],
   templateUrl: './car-detail.component.html',
   styleUrls: ['./car-detail.component.css']
 })
@@ -19,11 +21,14 @@ export class CarDetailComponent implements OnInit {
   dataLoaded = false;
   carImages: string[] = [];
   selectedImage: string = '';
+  rentDate: string = '';
+  returnDate: string = '';
 
   private carService = inject(CarService);
   private activatedRoute = inject(ActivatedRoute);
   private toastrService = inject(ToastrService);
   private cartService = inject(CartService);
+  private router = inject(Router);
 
   ngOnInit(): void {
     this.activatedRoute.params.subscribe(params => {
@@ -61,8 +66,17 @@ export class CarDetailComponent implements OnInit {
     modal.style.display = "none";
   }
 
-  rentCar(car:Car){
-    this.toastrService.success(car.description,"Başarıyla eklendi.");
-    this.cartService.addToCart(car);
+  openRentalModal() {
+    const modal = document.getElementById("rentalModal")!;
+    modal.style.display = "block";
+  }
+
+  closeRentalModal() {
+    const modal = document.getElementById("rentalModal")!;
+    modal.style.display = "none";
+  }
+
+  rentCar(carId: number, rentDate: string, returnDate: string) {
+    this.router.navigate(['/payment'], { state: { carId, rentDate, returnDate } });
   }
 }

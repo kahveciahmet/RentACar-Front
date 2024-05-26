@@ -7,11 +7,9 @@ import { Car } from '../models/car';
 })
 export class FilterPipePipe implements PipeTransform {
 
-  transform(value: Car[], filterText: string): Car[] {
-    filterText = filterText?filterText.toLocaleLowerCase():" "
-    return filterText?value
-    .filter((c:Car)=>c.description.toLocaleLowerCase().indexOf(filterText)!==-1)
-    :value;
+  transform(value: any[], filterText: string, property: string): any[] {
+    filterText = filterText ? filterText.toLocaleLowerCase() : "";
+    return filterText ? value.filter((item: any) => item[property].toLocaleLowerCase().indexOf(filterText) !== -1) : value;
   }
 
 }

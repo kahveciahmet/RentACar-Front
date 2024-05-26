@@ -4,8 +4,8 @@
   </div>
 </div>
 
-<div *ngIf="dataLoaded && car">
-  <h2>{{ car.brandName }} {{ car.modelYear }} Detayları</h2>
+<div *ngIf="dataLoaded && car" class="car-details">
+  <h2 class="car-title">{{ car.brandName }} {{ car.modelYear }} Detayları</h2>
 
   <!-- Kaydırmalı Galeri Başlangıcı -->
   <div class="image-gallery">
@@ -17,57 +17,73 @@
   </div>
   <!-- Kaydırmalı Galeri Bitişi -->
 
-  <table class="table table-striped">
-    <tbody>
-      <tr>
-        <th>Marka</th>
-        <td>{{ car.brandName }}</td>
-      </tr>
-      <tr>
-        <th>Renk</th>
-        <td>{{ car.colorName }}</td>
-      </tr>
-      <tr>
-        <th>Model Yılı</th>
-        <td>{{ car.modelYear }}</td>
-      </tr>
-      <tr>
-        <th>Günlük Fiyat</th>
-        <td>{{ car.dailyPrice }}</td>
-      </tr>
-      <tr>
-        <th>Açıklama</th>
-        <td>{{ car.description }}</td>
-      </tr>
-      <tr>
-        <th>Vites Tipi</th>
-        <td>{{ car.transmissionType }}</td>
-      </tr>
-      <tr>
-        <th>Günlük Km Limiti</th>
-        <td>{{ car.dailyKmLimit }}</td>
-      </tr>
-      <tr>
-        <th>Oturma Kapasitesi</th>
-        <td>{{ car.seatingCapacity }}</td>
-      </tr>
-      <tr>
-        <th>Minimum Ehliyet Yaşı</th>
-        <td>{{ car.licenseAge }}</td>
-      </tr>
-      <tr>
-        <th>Minimum Yaş</th>
-        <td>{{ car.renterAge }}</td>
-      </tr>
-      <tr>
-        <td colspan="2"><button (click)="rentCar(car)" type="button" class="btn btn-outline-success full-width-btn">Kiralamak için tıkla!</button></td>
-      </tr>
-    </tbody>
-  </table>
+  <div class="car-info">
+    <div class="info-row">
+      <span class="info-label">Marka:</span>
+      <span class="info-value">{{ car.brandName }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Renk:</span>
+      <span class="info-value">{{ car.colorName }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Model Yılı:</span>
+      <span class="info-value">{{ car.modelYear }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Günlük Fiyat:</span>
+      <span class="info-value">{{ car.dailyPrice }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Açıklama:</span>
+      <span class="info-value">{{ car.description }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Vites Tipi:</span>
+      <span class="info-value">{{ car.transmissionType }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Günlük Km Limiti:</span>
+      <span class="info-value">{{ car.dailyKmLimit }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Oturma Kapasitesi:</span>
+      <span class="info-value">{{ car.seatingCapacity }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Minimum Ehliyet Yaşı:</span>
+      <span class="info-value">{{ car.licenseAge }}</span>
+    </div>
+    <div class="info-row">
+      <span class="info-label">Minimum Yaş:</span>
+      <span class="info-value">{{ car.renterAge }}</span>
+    </div>
+    <div class="info-row">
+      <button (click)="openRentalModal()" type="button" class="btn btn-outline-success full-width-btn">Kiralamak için tıkla!</button>
+    </div>
+  </div>
 </div>
 
 <div id="imageModal" class="modal" (click)="closeImage()">
   <span class="close" (click)="closeImage()">&times;</span>
   <img class="modal-content" id="modalImage" [src]="selectedImage">
   <div class="caption">{{ car?.description }}</div>
+</div>
+
+<!-- Rental Modal -->
+<div id="rentalModal" class="modal">
+  <div class="modal-content">
+    <span class="close" (click)="closeRentalModal()">&times;</span>
+    <form (ngSubmit)="rentCar(car.id, rentDate, returnDate)">
+      <div class="form-group">
+        <label for="rentDate">Kiralama Tarihi</label>
+        <input type="date" [(ngModel)]="rentDate" name="rentDate" class="form-control" required>
+      </div>
+      <div class="form-group">
+        <label for="returnDate">Dönüş Tarihi</label>
+        <input type="date" [(ngModel)]="returnDate" name="returnDate" class="form-control" required>
+      </div>
+      <button type="submit" class="btn btn-primary full-width-btn">Ödeme Sayfasına Git</button>
+    </form>
+  </div>
 </div>

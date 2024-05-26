@@ -9,10 +9,12 @@ import { CustomerComponent } from './components/customer/customer.component';
 import { HttpClientModule, HttpClient } from '@angular/common/http';
 import { CommonModule } from '@angular/common';
 import { CarDetailComponent } from './components/car-detail/car-detail.component';
-import { FormsModule } from '@angular/forms';
+import { FormsModule, ReactiveFormsModule } from '@angular/forms';
 import { FilterPipePipe } from './pipes/filter-pipe.pipe';
 import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
+import { MatDatepickerModule } from '@angular/material/datepicker';
+import { MatNativeDateModule } from '@angular/material/core';
 
 @Component({
   selector: 'app-root',
@@ -23,8 +25,11 @@ import { CartSummaryComponent } from './components/cart-summary/cart-summary.com
     CarComponent, 
     BrandComponent,
     CartSummaryComponent, 
-    RentalComponent, 
-    NaviComponent, 
+    RentalComponent,
+    ReactiveFormsModule, 
+    NaviComponent,
+    MatDatepickerModule,
+    MatNativeDateModule,
     ColorComponent, 
     CustomerComponent, 
     RentalComponent,

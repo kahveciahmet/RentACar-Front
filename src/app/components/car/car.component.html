@@ -9,37 +9,26 @@
     <label for="filterText" class="form-label">İstediğin kiralık arabayı ara!</label>
     <input type="text" [(ngModel)]="filterText" class="form-control" id="filterText" placeholder="Aradığın arabayı yaz...">
   </div>
-  <div *ngIf="filterText" class="alert alert-success">
-    {{filterText}} aradınız.
-
-  </div>
 
   <div *ngIf="dataLoaded">
     <h2 class="mb-4">Araba Listesi</h2>
-    <table class="table table-striped">
-      <thead class="thead-dark">
-        <tr>
-          <th scope="col">Id</th>
-          <th scope="col">Marka</th>
-          <th scope="col">Renk</th>
-          <th scope="col">Model Yılı</th>
-          <th scope="col">Günlük Fiyat</th>
-          <th scope="col">Vites Tipi</th>
-          <th scope="col">Açıklama</th>
-        </tr>
-      </thead>
-      <tbody>
-        <tr *ngFor="let car of cars | filterPipe:filterText" (click)="goToCarDetails(car.id)">
-          <th scope="row">{{ car.id }}</th>
-          <td>{{ car.brandName }}</td>
-          <td>{{ car.colorName }}</td>
-          <td>{{ car.modelYear }}</td>
-          <td>{{ car.dailyPrice }}</td>
-          <td>{{ car.transmissionType }}</td>
-          <td>{{ car.description }}</td>
-          <td><button type="button" class="btn btn-outline-success">Araç Detayı</button></td>
-        </tr>
-      </tbody>
-    </table>
+    <div class="row">
+      <div class="col-md-4 mb-4" *ngFor="let car of cars | filterPipe:filterText:'description'">
+        <div class="card h-100">
+          <img *ngIf="car.carImages.length" [src]="car.carImages[0]" class="card-img-top" alt="{{ car.description }}">
+          <img *ngIf="!car.carImages.length" src="assets/images/default-car.jpg" class="card-img-top" alt="Default Car Image">
+          <div class="card-body">
+            <h5 class="card-title">{{ car.brandName }} {{ car.modelYear }}</h5>
+            <p class="card-text">
+              <strong>Renk:</strong> {{ car.colorName }}<br>
+              <strong>Günlük Fiyat:</strong> {{ car.dailyPrice }} TL<br>
+              <strong>Vites Tipi:</strong> {{ car.transmissionType }}<br>
+              <strong>Açıklama:</strong> {{ car.description }}
+            </p>
+            <button (click)="goToCarDetails(car.id)" class="btn btn-primary">Araç Detayı</button>
+          </div>
+        </div>
+      </div>
+    </div>
   </div>
 </div>
