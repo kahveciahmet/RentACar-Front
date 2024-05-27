@@ -10,7 +10,7 @@ html, body {
     height: 100%;
   }
   
-  body::before {
+  /* body::before {
     content: "";
     position: absolute;
     top: 0;
@@ -19,8 +19,8 @@ html, body {
     height: 100%;
     background: linear-gradient(rgba(255, 255, 255, 0.8), rgba(255, 255, 255, 0.8)), url('/assets/images/arkaplan.jpg') no-repeat center center fixed;
     background-size: cover;
-    z-index: -1; /* Arka planın diğer elemanların arkasında kalmasını sağlamak için */
-  }
+    z-index: -1;
+  } */
   
   .container-fluid {
     background: rgba(255, 255, 255, 0.9);

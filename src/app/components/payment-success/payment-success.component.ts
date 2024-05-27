@@ -11,6 +11,6 @@ export class PaymentSuccessComponent {
   constructor(private router: Router) {}
 
   navigateHome() {
-    this.router.navigate(['/']);
+    this.router.navigate(['/cars']);
   }
 }

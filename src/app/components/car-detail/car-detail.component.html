@@ -74,7 +74,7 @@
 <div id="rentalModal" class="modal">
   <div class="modal-content">
     <span class="close" (click)="closeRentalModal()">&times;</span>
-    <form (ngSubmit)="rentCar(car.id, rentDate, returnDate)">
+    <form (ngSubmit)="rentCar(car.id, rentDate, returnDate)" #rentalForm="ngForm">
       <div class="form-group">
         <label for="rentDate">Kiralama Tarihi</label>
         <input type="date" [(ngModel)]="rentDate" name="rentDate" class="form-control" required>
@@ -83,7 +83,8 @@
         <label for="returnDate">Dönüş Tarihi</label>
         <input type="date" [(ngModel)]="returnDate" name="returnDate" class="form-control" required>
       </div>
-      <button type="submit" class="btn btn-primary full-width-btn">Ödeme Sayfasına Git</button>
+      <button type="submit" class="btn btn-primary full-width-btn2" [disabled]="!rentalForm.form.valid">Ödeme Sayfasına Git</button>
     </form>
   </div>
 </div>
+

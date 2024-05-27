@@ -43,7 +43,7 @@
   width: auto; /* Use auto width */
   max-width: 70%; /* Decrease the max-width */
   max-height: 70%; /* Ensure the image fits within the viewport */
-  border-radius: 10px; /* Rounded corners */
+  border-radius: 100px; /* Rounded corners */
   position: relative; /* Relative positioning for close button */
 }
 
@@ -71,6 +71,7 @@
 /* Form styling */
 .form-group {
   margin-bottom: 15px;
+  padding: 30px;
 }
 
 .full-width-btn {
@@ -151,6 +152,20 @@
   transition: background-color 0.3s;
 }
 
+.full-width-btn2 {
+  width: 100%;
+  padding: 10px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
 .full-width-btn:hover {
   background-color: #218838;
 }
@@ -168,30 +183,62 @@
 }
 
 .modal-content {
-  margin: 5% auto;
+  margin: 10% auto; /* Adjusted for better centering */
+  padding: 20px;
   border: none;
-  width: auto;
-  max-width: 70%; /* Decrease the max-width */
-  max-height: 70%; /* Ensure the image fits within the viewport */
+  width: 80%;
+  max-width: 500px;
+  background-color: #fff;
   border-radius: 10px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
 }
 
-.modal-content img {
-  width: 100%;
-  height: auto;
-  border-radius: 10px;
-}
-
-.close {
+.modal-content .close {
   color: #aaa;
   float: right;
   font-size: 28px;
   font-weight: bold;
 }
 
-.close:hover,
-.close:focus {
+.modal-content .close:hover,
+.modal-content .close:focus {
   color: black;
   text-decoration: none;
   cursor: pointer;
+}
+
+.form-group {
+  margin-bottom: 20px;
+}
+
+.form-group label {
+  display: block;
+  font-weight: bold;
+  margin-bottom: 5px;
+}
+
+.form-group input[type="date"] {
+  width: calc(100% - 40px); /* Adjust the width to be a bit wider */
+  padding: 10px;
+  box-sizing: border-box;
+  border: 1px solid #ccc;
+  border-radius: 5px;
+}
+
+.full-width-btn2 {
+  width: 100%;
+  padding: 12px;
+  font-size: 1rem;
+  font-weight: bold;
+  text-align: center;
+  background-color: #28a745;
+  color: #fff;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  transition: background-color 0.3s;
+}
+
+.full-width-btn2:hover {
+  background-color: #218838;
 }
