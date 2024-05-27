@@ -1,5 +1,5 @@
 import { Component } from '@angular/core';
-import { RouterOutlet } from '@angular/router';
+import { Router, RouterOutlet } from '@angular/router';
 import { CarComponent } from './components/car/car.component';
 import { BrandComponent } from './components/brand/brand.component';
 import { RentalComponent } from './components/rental/rental.component';
@@ -15,6 +15,8 @@ import { ToastrModule } from 'ngx-toastr';
 import { CartSummaryComponent } from './components/cart-summary/cart-summary.component';
 import { MatDatepickerModule } from '@angular/material/datepicker';
 import { MatNativeDateModule } from '@angular/material/core';
+import { LoginComponent } from './components/login/login.component';
+import { RegisterComponent } from './components/register/register.component';
 
 @Component({
   selector: 'app-root',
@@ -36,6 +38,8 @@ import { MatNativeDateModule } from '@angular/material/core';
     HttpClientModule,
     CarDetailComponent,
     FormsModule,
+    LoginComponent,
+    RegisterComponent,
     FilterPipePipe, 
     ToastrModule
   ],
@@ -45,4 +49,10 @@ import { MatNativeDateModule } from '@angular/material/core';
 export class AppComponent {
   filterText:string="";
   title = 'Rent-A-Car';
+
+  constructor(private router: Router) {}
+
+  isAuthPage(): boolean {
+    return this.router.url === '/login' || this.router.url === '/register';
+  }
 }

@@ -8,12 +8,21 @@
   color: white;
   z-index: 1000; /* Üstte görünmesini sağlamak için */
   position: fixed; /* Üstte kalmasını sağlamak için */
-  top: 0;
-  width: 100%;
+  top: 10px; /* Yukarıdan 10px aşağıda başlasın */
+  left: 2px; /* Sol kenardan 2px boşluk */
+  right: 20px; /* Sağ kenardan 20px boşluk */
+  height: 60px; /* Navbar yüksekliğini sabit tutun */
+  display: flex;
+  align-items: center;
+  border-radius: 30px; /* Köşeleri yuvarlatmak için border-radius ekleyin */
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1); /* Hafif gölge efekti */
+  padding: 0 30px; /* İçeriklerin kenarlara yapışmaması için iç boşluk */
 }
 
 .navbar-brand {
   color: white !important;
+  display: flex;
+  align-items: center;
 }
 
 .navbar-nav {
@@ -25,17 +34,34 @@
 .nav-link {
   color: white !important;
   margin-right: 15px; /* Menü elemanları arasına boşluk ekler */
+  font-size: 16px; /* Font büyüklüğünü biraz küçültün */
+  font-weight: bold; /* Yazı tipini kalın yapın */
 }
 
 .nav-link:hover {
-  color: #adb5bd !important; /* Hover effect color */
+  color: #bdadad !important; /* Hover effect color */
 }
 
 .form-control {
   margin-left: 15px; /* Arama çubuğu ile menü elemanları arasına boşluk ekler */
 }
 
-.container-fluid {
-  background-color: rgba(0,122,255,255);
-  padding: 0;
+.navbar-logo {
+  height: 100px; /* Logonun yüksekliğini küçültün */
+  width: 100px;
+  margin-top: -5px; /* Logoyu yukarı doğru kaydırın */
+  margin-bottom: -5px; /* Logoyu aşağı doğru kaydırın */
+}
+
+.btn-light {
+  color: #000;
+  background-color: #f8f9fa;
+  border-color: #f8f9fa;
+  font-weight: bold;
+}
+
+.contact-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 10px;
 }

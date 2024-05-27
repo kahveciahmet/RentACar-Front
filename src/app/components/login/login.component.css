@@ -1,0 +1,66 @@
+.form-signin {
+    max-width: 600px;
+    padding: 50px;
+    background: none; /* Arka plan rengini kaldır */
+    margin: auto;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    flex-direction: column;
+}
+
+.form-signin .login-form {
+    background: rgba(255, 255, 255, 0.5); /* Şeffaf arka plan */
+    padding: 50px;
+    border-radius: 20px;
+    width: 100%; /* Kutu boyutunu sabitle */
+    box-shadow: 0 0 10px rgba(0, 0, 0, 0.1); 
+    display: flex;
+    flex-direction: column;
+    align-items: center; /* Align items to the center */
+}
+
+.form-signin .form-group {
+    width: 100%;
+    padding-right: 20px;
+}
+
+.form-signin .form-control {
+    width: 100%;
+    height: 45px;
+}
+
+.logo-shadow {
+    filter: drop-shadow(2px 4px 6px black); /* Logoya gölge ekle */
+    margin-bottom: 20px; /* Add some space below the logo */
+    max-width: 450px; /* Maksimum genişlik */
+    max-height: 450px; /* Maksimum yükseklik */
+    width: auto;
+    height: auto;
+}
+
+.form-check {
+    align-self: flex-start; /* Align the checkbox to the start */
+}
+
+.text-center {
+    text-align: center;
+}
+
+.mt-3 {
+    margin-top: 1rem;
+}
+
+.mt-5 {
+    margin-top: 3rem;
+}
+
+.mb-3 {
+    margin-bottom: 1rem;
+}
+
+.bold-text {
+    font-weight: 600 !important; /* Extra bold text */
+    color: #d4e7f7;
+    text-shadow: 2px 2px 7px rgba(0, 0, 0, 0.5);
+}

@@ -144,4 +144,53 @@ html, body {
     background-color: #0056b3;
     border-color: #004085;
   }
+
+/* Auth pages (login, register) styles */
+.auth-container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+    background-color: rgba(255, 255, 255, 0.9); /* Hafif şeffaf beyaz arka plan */
+    background-image: url('/assets/images/arkaplan.jpg'); /* Arka plan resmi */
+    background-size: cover;
+    background-position: center;
+    z-index: 1;
+    position: relative;
+  }
   
+  .form-signin {
+    max-width: 330px;
+    padding: 15px;
+    background-color: rgba(255, 255, 255, 0.85); /* Formun arka planını hafif şeffaf beyaz yapıyoruz */
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+  }
+  
+  .form-signin .form-floating:focus-within {
+    z-index: 2;
+  }
+  
+  .form-signin input[type="email"] {
+    margin-bottom: -1px;
+    border-bottom-right-radius: 0;
+    border-bottom-left-radius: 0;
+  }
+  
+  .form-signin input[type="password"] {
+    margin-bottom: 10px;
+    border-top-left-radius: 0;
+    border-top-right-radius: 0;
+  }
+  
+  .logo {
+    width: 150px;
+    height: 150px;
+  }
+  
+  .container {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    height: 100vh;
+  }

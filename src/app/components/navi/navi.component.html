@@ -1,26 +1,34 @@
 <nav class="navbar navbar-expand-lg">
-  <div class="container-fluid">
-    <a class="navbar-brand" href="#">KAHVECI RENT-A-CAR</a>
+    <a class="navbar-brand" href="#">
+      <img src="/assets/images/kahveci_rental_logo_2.png" alt="KAHVECI RENT-A-CAR Logo" class="navbar-logo">
+    </a>
     <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
       <span class="navbar-toggler-icon"></span>
     </button>
     <div class="collapse navbar-collapse" id="navbarSupportedContent">
       <ul class="navbar-nav me-auto mb-2 mb-lg-0">
         <li class="nav-item">
-          <a class="nav-link active" aria-current="page" href="#">Ana Menü</a>
-        </li>
-        <li class="nav-item">
-          <a class="nav-link" href="#">Link</a>
+          <a class="nav-link active" aria-current="page" [routerLink]="['/cars']">Ana Menü</a>
         </li>
         <app-cart-summary></app-cart-summary>
-        <li class="nav-item">
-          <a class="nav-link disabled" aria-disabled="true">Disabled</a>
+        <li class="nav-item dropdown">
+          <a class="nav-link dropdown-toggle" href="#" id="contactDropdown" role="button" data-bs-toggle="dropdown" aria-expanded="false">
+            İletişim
+          </a>
+          <ul class="dropdown-menu" aria-labelledby="contactDropdown">
+            <li>
+              <a class="dropdown-item" href="https://www.instagram.com/ahmetkahveci204" target="_blank">
+                <img src="/assets/icons/instagram_icon.png" alt="Instagram" class="contact-icon"> Instagram
+              </a>
+            </li>
+            <li>
+              <a class="dropdown-item" href="mailto:ahmettkkahveci@gmail.com">
+                <img src="/assets/icons/gmail_icon.png" alt="Mail" class="contact-icon"> Mail
+              </a>
+            </li>
+          </ul>
         </li>
       </ul>
-      <form class="d-flex" role="search">
-        <input class="form-control me-2" type="search" placeholder="Sitede arama yap" aria-label="Search">
-        <button type="button" class="btn btn-light">Bul</button>
-      </form>
+      <button type="button" class="btn btn-light" (click)="logout()">Çıkış Yap</button>
     </div>
-  </div>
 </nav>
