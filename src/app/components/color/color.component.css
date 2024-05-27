@@ -22,14 +22,14 @@
 .list-group-item {
   display: flex;
   align-items: center;
-  padding: 15px 20px; /* Padding arttırıldı */
+  padding: 15px 20px;
   border: none;
-  border-bottom: 1px solid #ddd; /* Add bottom border for separation */
-  font-size: 1.1rem; /* Yazı boyutu arttırıldı */
+  border-bottom: 1px solid #ddd; 
+  font-size: 1.1rem; 
 }
 
 .list-group-item:last-child {
-  border-bottom: none; /* Remove bottom border for the last item */
+  border-bottom: none; 
 }
 
 .list-group-item-active {
@@ -37,8 +37,8 @@
   color: white;
   display: flex;
   align-items: center;
-  font-size: 1.2rem; /* Yazı boyutu biraz daha arttırıldı */
-  padding: 20px 25px; /* Daha büyük padding */
+  font-size: 1.2rem; 
+  padding: 20px 25px; 
 }
 
 .color-box {
@@ -49,5 +49,5 @@
   border: 1px solid #ddd;
   border-radius: 4px;
   vertical-align: middle;
-  background-color: currentColor; /* Color box background color */
+  background-color: currentColor; 
 }

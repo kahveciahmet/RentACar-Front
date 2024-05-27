@@ -54,37 +54,37 @@ h2 {
 
 /* styled-label sınıfı için stil tanımlamaları */
 .styled-label {
-  font-family: 'Roboto', sans-serif; /* Yazı tipi */
-  font-size: 1.5rem; /* Yazı boyutu */
-  font-weight: bold; /* Kalın yazı */
-  color: #007bff; /* Mavi renk */
-  text-align: center; /* Ortaya hizalama */
-  display: block; /* Blok elemanı yaparak ortalama */
-  margin-bottom: 1rem; /* Alt boşluk */
+  font-family: 'Roboto', sans-serif; 
+  font-size: 1.5rem;
+  font-weight: bold; 
+  color: #007bff; 
+  text-align: center; 
+  display: block;
+  margin-bottom: 1rem; 
 }
 
 /* Arama çubuğunu stilize etme */
 .search-container {
-  text-align: center; /* Ortaya hizalama */
+  text-align: center; 
 }
 
 .search-input {
   display: inline-block;
-  width: 60%; /* Çubuğun genişliği yazıdan biraz daha uzun olacak şekilde ayarlandı */
-  max-width: 700px; /* Maksimum genişlik */
-  padding: 0.5rem; /* İç boşluk */
-  border: 1px solid #ddd; /* Kenar */
-  border-radius: 0.25rem; /* Kenarları yuvarlama */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
-  font-size: 1rem; /* Yazı boyutu */
+  width: 60%; 
+  max-width: 700px; 
+  padding: 0.5rem; 
+  border: 1px solid #ddd; 
+  border-radius: 0.25rem;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
+  font-size: 1rem; 
 }
 
 
 /* Arama çubuğu stil tanımlamaları */
 #filterText {
-  font-size: 1rem; /* Yazı boyutu */
-  padding: 10px; /* İçerik dolgusu */
-  border-radius: 5px; /* Kenar yuvarlama */
-  border: 1px solid #ced4da; /* Kenarlık rengi */
-  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); /* Hafif gölge */
+  font-size: 1rem;
+  padding: 10px; 
+  border-radius: 5px; 
+  border: 1px solid #ced4da;
+  box-shadow: 0 2px 4px rgba(0, 0, 0, 0.1); 
 }

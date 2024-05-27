@@ -24,7 +24,7 @@ html, body {
   
   .container-fluid {
     background: rgba(255, 255, 255, 0.9);
-    padding-top: 56px; /* Navigasyon çubuğu için yer bırakma */
+    padding-top: 56px;
     border-radius: 10px;
   }
   
@@ -34,15 +34,15 @@ html, body {
   }
   
   .sidebar {
-    background-color: #f8f9fa; /* Light background color */
+    background-color: #f8f9fa; 
     padding: 20px;
     border-right: 1px solid #ddd;
-    height: calc(100vh - 56px); /* 56px is the height of the navbar */
+    height: calc(100vh - 56px); 
     position: sticky;
-    top: 56px; /* Align with the navbar */
+    top: 56px; 
     display: flex;
     flex-direction: column;
-    justify-content: center; /* Ortalamak için */
+    justify-content: center;
   }
   
   .filter-section {
@@ -55,14 +55,14 @@ html, body {
   .list-group-item {
     display: flex;
     align-items: center;
-    padding: 15px 20px; /* Padding arttırıldı */
+    padding: 15px 20px; 
     border: none;
-    border-bottom: 1px solid #ddd; /* Add bottom border for separation */
-    font-size: 1.1rem; /* Yazı boyutu arttırıldı */
+    border-bottom: 1px solid #ddd; 
+    font-size: 1.1rem;
   }
   
   .list-group-item:last-child {
-    border-bottom: none; /* Remove bottom border for the last item */
+    border-bottom: none; 
   }
   
   .list-group-item-active {
@@ -70,8 +70,8 @@ html, body {
     color: white;
     display: flex;
     align-items: center;
-    font-size: 1.2rem; /* Yazı boyutu biraz daha arttırıldı */
-    padding: 20px 25px; /* Daha büyük padding */
+    font-size: 1.2rem;
+    padding: 20px 25px; 
   }
   
   .brand-logo {
@@ -89,7 +89,7 @@ html, body {
     border: 1px solid #ddd;
     border-radius: 4px;
     vertical-align: middle;
-    background-color: currentColor; /* Color box background color */
+    background-color: currentColor; 
   }
   
   .content {
@@ -103,7 +103,7 @@ html, body {
   .card {
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
     transition: transform 0.2s;
-    background-color: rgba(255, 255, 255, 0.9); /* Kartların arka planını şeffaf yapıyoruz */
+    background-color: rgba(255, 255, 255, 0.9); 
   }
   
   .card:hover {
@@ -151,8 +151,8 @@ html, body {
     align-items: center;
     justify-content: center;
     height: 100vh;
-    background-color: rgba(255, 255, 255, 0.9); /* Hafif şeffaf beyaz arka plan */
-    background-image: url('/assets/images/arkaplan.jpg'); /* Arka plan resmi */
+    background-color: rgba(255, 255, 255, 0.9); 
+    background-image: url('/assets/images/arkaplan.jpg'); 
     background-size: cover;
     background-position: center;
     z-index: 1;
@@ -162,7 +162,7 @@ html, body {
   .form-signin {
     max-width: 330px;
     padding: 15px;
-    background-color: rgba(255, 255, 255, 0.85); /* Formun arka planını hafif şeffaf beyaz yapıyoruz */
+    background-color: rgba(255, 255, 255, 0.85); 
     border-radius: 10px;
     box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
   }
